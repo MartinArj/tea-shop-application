@@ -1,0 +1,32 @@
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\add.baml
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\delete.baml
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\LaberWindow.baml
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\MainWindow.baml
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\ManagerWindow.baml
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\OrderPage.baml
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\update.baml
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\view.baml
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\add.g.cs
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\delete.g.cs
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\LaberWindow.g.cs
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\MainWindow.g.cs
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\ManagerWindow.g.cs
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\OrderPage.g.cs
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\update.g.cs
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\view.g.cs
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\App.g.cs
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\tea shop app_MarkupCompile.cache
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\tea shop app.exe
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\tea shop app.pdb
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\bin\Debug\tea shop app.exe.config
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\bin\Debug\tea shop app.exe
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\bin\Debug\tea shop app.pdb
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\FindBillPage.g.cs
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\tea shop app_MarkupCompile.lref
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\FindBillPage.baml
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\tea shop app.g.resources
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\tea_shop_app.Properties.Resources.resources
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\tea_shop_app.csproj.GenerateResource.Cache
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\tea_shop_app.csprojResolveAssemblyReference.cache
+C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\obj\Debug\tea shop app_Content.g.cs
