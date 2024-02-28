@@ -1,8 +1,8 @@
 ﻿<Window x:Class="tea_shop_app.LaberWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        
-        Title="LaberWindow" Height="500" Width="725">
+        WindowStartupLocation="CenterScreen"
+        Title="LaberWindow" Height="auto" Width="auto">
     <Grid>
        
         <Grid.RowDefinitions>
@@ -20,7 +20,7 @@
                     <Button Name="find_btn" Content="find bill"  Margin="0 10" Height="30" Width="60" Click="find_btn_Click_1"/>
                 </StackPanel>
             </Border>
-            <Frame x:Name="laberpage" Background="Lavender" Grid.Row="1" Grid.Column="1"/>
+            <Frame x:Name="laberpage" Background="Lavender" Grid.Row="1" Grid.Column="1" NavigationUIVisibility="Hidden"/>
         </Grid>
         
         <StackPanel  Background="LightCoral" Grid.Column="0">

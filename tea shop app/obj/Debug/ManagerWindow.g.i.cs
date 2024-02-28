@@ -40,7 +40,7 @@ namespace tea_shop_app {
     public partial class ManagerWindow : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
         
-        #line 26 "..\..\ManagerWindow.xaml"
+        #line 27 "..\..\ManagerWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock id;
         
@@ -48,7 +48,7 @@ namespace tea_shop_app {
         #line hidden
         
         
-        #line 27 "..\..\ManagerWindow.xaml"
+        #line 28 "..\..\ManagerWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button logout_btn;
         
@@ -56,7 +56,7 @@ namespace tea_shop_app {
         #line hidden
         
         
-        #line 30 "..\..\ManagerWindow.xaml"
+        #line 31 "..\..\ManagerWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Frame manager;
         
@@ -95,7 +95,7 @@ namespace tea_shop_app {
             {
             case 1:
             
-            #line 16 "..\..\ManagerWindow.xaml"
+            #line 17 "..\..\ManagerWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Add_product);
             
             #line default
@@ -103,7 +103,7 @@ namespace tea_shop_app {
             return;
             case 2:
             
-            #line 17 "..\..\ManagerWindow.xaml"
+            #line 18 "..\..\ManagerWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Update_product);
             
             #line default
@@ -111,7 +111,7 @@ namespace tea_shop_app {
             return;
             case 3:
             
-            #line 18 "..\..\ManagerWindow.xaml"
+            #line 19 "..\..\ManagerWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Delte);
             
             #line default
@@ -119,7 +119,7 @@ namespace tea_shop_app {
             return;
             case 4:
             
-            #line 19 "..\..\ManagerWindow.xaml"
+            #line 20 "..\..\ManagerWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.view);
             
             #line default
@@ -131,7 +131,7 @@ namespace tea_shop_app {
             case 6:
             this.logout_btn = ((System.Windows.Controls.Button)(target));
             
-            #line 27 "..\..\ManagerWindow.xaml"
+            #line 28 "..\..\ManagerWindow.xaml"
             this.logout_btn.Click += new System.Windows.RoutedEventHandler(this.logout_btn_Click_1);
             
             #line default

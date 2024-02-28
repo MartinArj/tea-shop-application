@@ -62,12 +62,14 @@
     <Compile Include="FindBillPage.xaml.cs">
       <DependentUpon>FindBillPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FindBillRep.cs" />
     <Compile Include="LaberWindow.xaml.cs">
       <DependentUpon>LaberWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ManagerWindow.xaml.cs">
       <DependentUpon>ManagerWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyClass.cs" />
     <Compile Include="OrderPage.xaml.cs">
       <DependentUpon>OrderPage.xaml</DependentUpon>
     </Compile>
