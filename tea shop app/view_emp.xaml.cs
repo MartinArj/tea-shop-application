@@ -16,13 +16,17 @@ using System.Windows.Shapes;
 namespace tea_shop_app
 {
     /// <summary>
-    /// Interaction logic for delete.xaml
+    /// Interaction logic for view_emp.xaml
     /// </summary>
-    public partial class delete : Page
+    public partial class view_emp : Page
     {
-        public delete()
+        employee_repository emp;
+        public view_emp()
         {
+            emp = new employee_repository();
+
             InitializeComponent();
+            employee_tetail.ItemsSource = emp.employee_list;
         }
     }
 }

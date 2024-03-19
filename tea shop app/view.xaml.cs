@@ -20,9 +20,21 @@ namespace tea_shop_app
     /// </summary>
     public partial class view : Page
     {
+        Product_repository prod;
+
         public view()
         {
             InitializeComponent();
+            prod = new Product_repository();
+            view_data();
+
         }
+        private void view_data()
+        {
+            product_tetail.ItemsSource = Product_repository.productList;
+            
+        
+        }
+
     }
 }

@@ -1,0 +1,58 @@
+﻿<Page x:Class="tea_shop_app.addemployee"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="600"
+	Title="addemployee"
+      Background="AliceBlue">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Border HorizontalAlignment="Center" VerticalAlignment="Center" Height="300" Width="300" BorderBrush="#bad1d0" BorderThickness="1.1 2.1 3.3 3" CornerRadius="30">
+            <StackPanel  VerticalAlignment="Center" HorizontalAlignment="Center" >
+                <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                    <TextBlock Text="name*" Height="20" Width="70"/>
+                    <TextBox Height="20" Width="90" x:Name="name"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal"  Margin="0 10 0 0">
+                    <TextBlock Text="DOB*" Height="20" Width="70"/>
+                    <TextBox Height="20" Width="90" x:Name="dob"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Margin="0 10 0 0">
+                    <TextBlock Text="phone*" Height="20" Width="70"/>
+                    <TextBox Height="20" Width="90" x:Name="phone"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Margin="0 10 0 0">
+                    <TextBlock Text="aadhar*" Height="20" Width="70"/>
+                    <TextBox Height="20" Width="120" x:Name="aadhar"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Margin="0 10 0 0">
+                    <TextBlock Text="designation*" Height="15" Width="70"/>
+                    <RadioButton Content="manager" GroupName="manager_emp" Width="80" x:Name="nanager_check_btn" Checked="nanager_check_btn_Checked_1" />
+                    <RadioButton Content="employee" GroupName="manager_emp" Width="80" x:Name="laber_check_btn" Checked="laber_check_btn_Checked_1"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Margin="0 10 0 0">
+                    <TextBlock Text="userid*" Height="20" Width="70"/>
+                    <TextBox Height="20" Width="90" x:Name="userid"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Margin="0 10 0 0">
+                    <TextBlock Text="password*" Height="15" Width="70"/>
+                    <TextBox Height="20" Width="90" x:Name="password"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Margin="0 10 0 0">
+                    <TextBlock Text="email id" Height="15" Width="70"/>
+                    <TextBox Height="15" Width="90" x:Name="emailid"/>
+                </StackPanel>
+                <StackPanel>
+                    <Button Content="Add" Width="60" Height="20" HorizontalAlignment="Right" Margin="0 10 0 0" x:Name="add" Click="add_Click_1"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+       
+            <TextBlock x:Name="message" HorizontalAlignment="Center" /> 
+        </StackPanel>
+    </Grid>
+</Page>

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Collections.ObjectModel;
 namespace tea_shop_app
 {
     class bill_rep
@@ -41,5 +42,36 @@ namespace tea_shop_app
                 cmd.ExecuteNonQuery();
             }
         }
+       
+        public void order_completed(ObservableCollection<Order_class> orderlist)
+        {
+            using (SqlConnection con = new SqlConnection(path))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT top 1 billid FROM bills order by billid desc;";
+                SqlDataReader dr;
+                dr = cmd.ExecuteReader();
+                int billid = 0;
+                while (dr.Read())
+                {
+                    billid = Convert.ToInt32(dr["billid"]);
+                }
+                dr.Close();
+                foreach (var item in orderlist)
+                {
+                    cmd.CommandText = "INSERT INTO orders values(" + billid + "," + item.Id + "," + item.Quantity + "," + item.Subtotal + ")";
+                    cmd.ExecuteNonQuery();
+                }
+
+
+
+            }
+
+        }
+       
+       
+       
     }
 }

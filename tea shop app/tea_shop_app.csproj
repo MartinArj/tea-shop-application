@@ -53,12 +53,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="addemployee.xaml.cs">
+      <DependentUpon>addemployee.xaml</DependentUpon>
+    </Compile>
     <Compile Include="bill.cs" />
     <Compile Include="bill_rep.cs" />
     <Compile Include="convertor\BooleanToVisibilityConvertor.cs" />
-    <Compile Include="delete.xaml.cs">
-      <DependentUpon>delete.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="employee.cs" />
+    <Compile Include="employee_repository.cs" />
     <Compile Include="FindBillPage.xaml.cs">
       <DependentUpon>FindBillPage.xaml</DependentUpon>
     </Compile>
@@ -74,20 +76,26 @@
       <DependentUpon>OrderPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Order_class.cs" />
-    <Compile Include="Order_repository.cs" />
+    <Compile Include="pass_order.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Product_repository.cs" />
+    <Compile Include="remove_emp.xaml.cs">
+      <DependentUpon>remove_emp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="update.xaml.cs">
       <DependentUpon>update.xaml</DependentUpon>
     </Compile>
     <Compile Include="view.xaml.cs">
       <DependentUpon>view.xaml</DependentUpon>
     </Compile>
+    <Compile Include="view_emp.xaml.cs">
+      <DependentUpon>view_emp.xaml</DependentUpon>
+    </Compile>
     <Page Include="add.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="delete.xaml">
+    <Page Include="addemployee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -122,11 +130,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="remove_emp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="update.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="view.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view_emp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -22,6 +22,8 @@ namespace tea_shop_app
         public LaberWindow()
         {
             InitializeComponent();
+            laberpage.NavigationService.Navigate(new OrderPage());
+            
         }
 
         private void order_btn_Click_1(object sender, RoutedEventArgs e)
@@ -39,6 +41,11 @@ namespace tea_shop_app
             MainWindow op = new MainWindow();
             op.Show();
             this.Close();
+        }
+
+        private void product_Click_1(object sender, RoutedEventArgs e)
+        {
+            laberpage.NavigationService.Navigate(new view());
         }
 
       

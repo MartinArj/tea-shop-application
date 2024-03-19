@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 namespace tea_shop_app
 {
-    class Product_repository
+  public  class Product_repository
     {
         string path = @"Data Source=LENOVO\SQLEXPRESS;Initial Catalog=teashop;Integrated Security=True";
        public static Dictionary<int, string> prod_dic = new Dictionary<int, string>();
@@ -19,23 +19,31 @@ namespace tea_shop_app
            ////productList.Add(new product("snacks", 5));
            ////productList.Add(new product("bicuits", 10));
            ////productList.Add(new product("vada", 10));
-           using (SqlConnection con = new SqlConnection(path))
+           if (productList.Count == 0)
            {
-               con.Open();
-               SqlCommand cmd = new SqlCommand();
-               cmd.Connection = con;
-               cmd.CommandText = "SELECT * FROM PRODUCT";
-               SqlDataReader dr;
-               dr =cmd.ExecuteReader();
-               while (dr.Read())
+               using (SqlConnection con = new SqlConnection(path))
                {
-                   string s = Convert.ToString(dr["name"]);
-                   float f = Convert.ToSingle(dr["price"]);
-                   int id=Convert.ToInt32( dr["id"]);
-                   productList.Add(new Product(s,f,id));
-                   prod_dic[id] = s;
-               }
+                   con.Open();
+                   SqlCommand cmd = new SqlCommand();
+                   cmd.Connection = con;
+                   cmd.CommandText = "SELECT * FROM PRODUCT";
+                   SqlDataReader dr;
+                   dr = cmd.ExecuteReader();
+                   while (dr.Read())
+                   {
+                       string s = Convert.ToString(dr["name"]);
+                       float f = Convert.ToSingle(dr["price"]);
+                       int id = Convert.ToInt32(dr["id"]);
+                       string status = Convert.ToString(dr["availablity"]);
+                       if (status.ToUpper() == "TRUE")
+                       {
+                           productList.Add(new Product(s, f, id, status));
+                           prod_dic[id] = s;
+                       }
+                       
+                   }
 
+               }
            }
        }
        public int lostproductid()
@@ -62,18 +70,18 @@ namespace tea_shop_app
        
        }
       
-     public  void addproduct(string name,float price)
+     public  void addproduct(string name,float price,string status="true")
        {
-           int id = lostproductid();
+           int id =this.lostproductid();
            using (SqlConnection con = new SqlConnection(path))
            {
                SqlCommand cmd = new SqlCommand();
                cmd.Connection = con;
                con.Open();
-               cmd.CommandText = "INSERT INTO product values('"+name+"',"+price+")";
+               cmd.CommandText = "INSERT INTO product(name,price,availablity) values('"+name+"',"+price+",'"+status+"')";
           
                cmd.ExecuteNonQuery();
-               Product_repository.productList.Add(new Product(name, price,++id));
+               Product_repository.productList.Add(new Product(name, price,++id,status));
                prod_dic[id] = name;
               // Console.WriteLine("*****insert sucsess*****");
               // MessageBox.Show("message", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -93,36 +101,20 @@ namespace tea_shop_app
            }
            return a;
        }
-       public void update(int id)
+       public void update(int id,string pname,float price,string status)
        {
            if (available(id))
               {
-                  string pname="";
-                  float price=0;
-                       foreach (var item in productList)
-                       {
-                           if (item.Prodid == id)
-                           {
-                               Console.WriteLine("product name="+item.Pname+"\nproduct price"+item.Price);
-                               pname = item.Pname;
-                               price = item.Price;
-                           }
-                       }
-                       Console.WriteLine("enter pname");
-                       pname = Console.ReadLine();
-                       Console.WriteLine("enter price");
-                       price = Single.Parse(Console.ReadLine());
+               
                        using (SqlConnection con = new SqlConnection(path))
                        {
                            SqlCommand cmd = new SqlCommand();
                            cmd.Connection = con;
                            con.Open();
-                           cmd.CommandText = "update product set name='"+pname+"',price="+price+" where id="+id+"";
+                           cmd.CommandText = "update product set name='"+pname+"',price="+price+",availablity='"+status+"' where id="+id+"";
                        
                            cmd.ExecuteNonQuery();
-                          
-                        
-
+                      
                        }
                        foreach (var item in productList)
                        {
@@ -148,9 +140,6 @@ namespace tea_shop_app
                    cmd.CommandText = "delete from product where id="+id+"";
                  
                    cmd.ExecuteNonQuery();
-
-                  //    \
-                  // Console.WriteLine("*****delete sucsess*****");
 
                }
                foreach (var item in productList)

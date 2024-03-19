@@ -1,33 +1,58 @@
 ﻿<Window x:Class="tea_shop_app.ManagerWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        WindowStartupLocation="CenterOwner"
-        Title="ManagerWindow" Height="350" Width="525">
-    <Grid ShowGridLines="False">
+        WindowStartupLocation="CenterScreen"
+        Title="ManagerWindow" Height="600" Width="805"
+       
+        >
+    <Grid ShowGridLines="False" Background="#eae1eb">
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="50" />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="150"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-            
-                <Button Content="Add" Width="80"  Click="Add_product" Margin="10 0 10 10"/>
-                <Button Content="Update" Width="80" Click="Update_product" Margin="10 0 10 10"/>
-                <Button Content="Delete" Width="80" Click="Delte" Margin="10 0 10 10"/>
-                <Button Content="viev" Width="80" Click="view" Margin="10 0 10 10" />
-        
+        <StackPanel Grid.Row="1">
+           
+
         </StackPanel>
+        <Border Grid.Column="0" Grid.Row="1" Background="Blue" CornerRadius="40" Height="300" Width="100">
+          
+        <StackPanel Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"   HorizontalAlignment="Center" >
+                <ToggleButton x:Name="product" Content="product" Margin="0 0 0 10" Click="product_Click_1"/>
+                    <StackPanel x:Name="product_panal" Visibility="Collapsed">
+                    <Button Content="Add" Width="80"  Click="Add_product" Margin="10 0 10 10" Background="LightGreen"/>
+                    <Button Content="Update" Width="80" Click="Update_product" Margin="10 0 10 10"
+                        Background="#4bf2e2"/>
+
+                    <Button Content="viev" Width="80" Click="view" Margin="10 0 10 10" Background="#e8d87d"/>
+                </StackPanel>
+
+                    
+                <ToggleButton Name="resource" Content="employee" Width="80" Click="resource_Click_1" />
+                <StackPanel x:Name="resource_pannel" Background="LightGoldenrodYellow" Visibility="Collapsed">
+                    <Button x:Name="add" Content="add" Click="add_Click_1" Width="80" Margin="0 10 00 0"/>
+                    <Button x:Name="remove" Content="remove" Click="remove_Click_1" Width="80" Margin="0 10"/>
+                    <Button x:Name="emp_view" Content="view" Click="emp_view_Click_1"  Width="80" Margin="0 10"/>
+                </StackPanel>
+                </StackPanel>
+        </Border>
         <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
             <Ellipse Height="50" Width="50"  Fill="Bisque" >
              
             </Ellipse>
             <TextBlock Height="25" Width="100" Name="id" Text="id replace" Margin="10 0 0 0" FontSize="16" FontWeight="Bold"/>
-            <Button Height="30" Width="59" x:Name="logout_btn" Content="logout->" Click="logout_btn_Click_1"/>
+            <Border Height="32" Width="61" Background="Aqua" x:Name="l" >
+                <Button Height="30" Width="59" x:Name="logout_btn" Content="logout->" Click="logout_btn_Click_1" Background="Red">
+                
+                </Button>
+            </Border>
+            
+           
         </StackPanel>
        
-        <Frame x:Name="manager" Grid.Column="1" Grid.Row="1" />
+        <Frame x:Name="manager" Grid.Column="1" Grid.Row="1" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

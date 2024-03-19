@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,20 +20,19 @@ namespace tea_shop_app
     /// </summary>
     public partial class ManagerWindow : Window
     {
+       
         public ManagerWindow()
         {
             InitializeComponent();
+            manager.NavigationService.Navigate(new add());
+          
         }
-        // public manager()
-        //{
-        //    InitializeComponent();
-        //    manager.Navigate(new Uri("MAINWINDOW.XAML"));
-        //   // this.NavigationService.Navigate(
-        //}
+      
 
         private void Add_product(object sender, RoutedEventArgs e)
         {
             manager.NavigationService.Navigate(new add());
+          
         }
 
         private void Update_product(object sender, RoutedEventArgs e)
@@ -40,11 +40,7 @@ namespace tea_shop_app
             manager.NavigationService.Navigate(new update());
         }
 
-        private void Delte(object sender, RoutedEventArgs e)
-        {
-            manager.NavigationService.Navigate(new delete());
-        }
-
+      
         private void view(object sender, RoutedEventArgs e)
         {
             manager.NavigationService.Navigate(new view());
@@ -56,5 +52,49 @@ namespace tea_shop_app
             main.Show();
             this.Close();
         }
+
+        private void resource_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (resource.IsChecked == true)
+            {
+                resource_pannel.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                resource_pannel.Visibility = Visibility.Collapsed;
+ 
+            }
+        }
+
+        private void add_Click_1(object sender, RoutedEventArgs e)
+        {
+            manager.NavigationService.Navigate(new addemployee());
+        }
+
+        private void remove_Click_1(object sender, RoutedEventArgs e)
+        {
+            manager.NavigationService.Navigate(new remove_emp());
+        }
+
+        private void product_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (product.IsChecked == true)
+            {
+                product_panal.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                product_panal.Visibility = Visibility.Collapsed;
+            }
+        }
+
+       
+
+        private void emp_view_Click_1(object sender, RoutedEventArgs e)
+        {
+            manager.NavigationService.Navigate(new view_emp());
+        }
+
+        
     }
 }

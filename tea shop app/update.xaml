@@ -5,31 +5,45 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-	Title="update" Background="White">
+	Title="update" Background="#4bf2e2">
 
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" >
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="product id" FontWeight="Bold" FontSize="15"/>
-                <TextBox Width="140"/>
+                <TextBlock Text="product id" FontWeight="Bold" FontSize="15" Width="110"/>
+                <TextBox Width="40" Background="#cbf7f1" x:Name="id"/>
+                <Button Margin="10 0 0 0" Width="50" Content="get" Background="#69a8f0" Click="get_old_tetail"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="old name:" FontWeight="Bold" FontSize="15"/>
-                <TextBlock FontWeight="Bold" FontSize="15"/>
+            <TextBlock Height="15" x:Name="message1" HorizontalAlignment="Center" Foreground="Red" Visibility="Hidden"/>
+            <StackPanel Orientation="Horizontal" Margin="3">
+              
+                <TextBlock Text="old name:" FontWeight="Bold" FontSize="15" Width="110"/>
+                <TextBlock FontWeight="Bold" FontSize="15" x:Name="old_name" Background="#cbf7f1" Width="110" />
+            </StackPanel >
+            <StackPanel Orientation="Horizontal" Margin="3">
+                <TextBlock Text="old price:" FontWeight="Bold" FontSize="15" Width="110"/>
+                <TextBlock FontWeight="Bold" FontSize="15" x:Name="old_price"  Width="110" Background="#cbf7f1"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="old name:" FontWeight="Bold" FontSize="15"/>
-                <TextBlock FontWeight="Bold" FontSize="15"/>
+            <StackPanel Orientation="Horizontal" Margin="3">
+                <TextBlock Text="old satus:" FontWeight="Bold" FontSize="15" Width="110"/>
+                <TextBlock FontWeight="Bold" FontSize="15" x:Name="old_status"  Width="110" Background="#cbf7f1"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0 10 0 10" >
                 <TextBlock Height="25" Width="110" Text="product name:" FontWeight="Bold" FontSize="15" />
-                <TextBox Height="25" Width="110" />
+                <TextBox Height="25" Width="110" Background="#cbf7f1" x:Name="new_name"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
                 <TextBlock Height="25" Width="110" Text="product price:" FontWeight="Bold" FontSize="15" />
-                <TextBox Height="25" Width="110"/>
+                <TextBox Height="25" Width="110" Background="#cbf7f1" x:Name="new_price"/>
             </StackPanel>
-            <Button Content="Update" FontWeight="Bold" FontSize="15" Margin="0 20 0 0" />
+            
+            <StackPanel Orientation="Horizontal" Margin="10" >
+                <RadioButton Content="Available" Margin="0 0 20 0" GroupName="truefalse_grop" x:Name="true_btn" Checked="true_btn_Checked"/>
+                <RadioButton Content="Not Available" GroupName="truefalse_grop"  x:Name="false_btn" Checked="false_btn_Checked" />
+            </StackPanel>
+
+            <Button Content="Update" FontWeight="Bold" FontSize="15" Margin="0 20 0 0" Background="#517572" BorderBrush="#152738" BorderThickness="2" Click="update_btn" />
+            <TextBlock x:Name="message" Height="20" Foreground="#111821" Visibility="Hidden" HorizontalAlignment="Center"/>
         </StackPanel>
 
     </Grid>

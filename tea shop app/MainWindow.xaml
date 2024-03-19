@@ -2,20 +2,31 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="tea_shop_app.MainWindow"
-        Title="MainWindow" Height="350" Width="525"
+        Title="MainWindow" Height="650" Width="925"
     WindowStartupLocation="CenterScreen"
     >
-    <Grid>
-        <StackPanel Height="200" Width="200" >
+    <Grid  >
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\ELCOT\Documents\Visual Studio 2012\Projects\tea shop app\tea shop app\images\background.png"/>
+        </Grid.Background>
+        <Border  Height="200" Width="200" CornerRadius="30" Background="#f7dad0" BorderBrush="#f08c6e" BorderThickness="1.7 2.2 3.3 4">
+            <StackPanel  >
+           
             <StackPanel  Orientation="Horizontal" Margin="0 40 0 0"  HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock Height="20" Width="50"  Text="login id:"/>
+                <TextBlock Height="20" Width="50"  Text="login id:" FontWeight="SemiBold"/>
                 <TextBox x:Name="id" Height="20" Width="100" Margin="10 0 0 0"/>
             </StackPanel>
             <StackPanel  Orientation="Horizontal" Margin="0 20 0 0"  HorizontalAlignment="Center" >
-                <TextBlock Height="20" Width="50"  Text="password:"/>
-                <TextBox x:Name="password" Height="20" Width="100" Margin="10 0 0 0" d:IsHidden="True"/>
+                <TextBlock Height="20" Width="50"  Text="password:" FontWeight="SemiBold"/>
+                <TextBox x:Name="password" Height="20" Width="100" Margin="10 0 0 0" />
             </StackPanel>
-            <Button Height="20" Width="50" HorizontalAlignment="Right" Margin="0 20 20 0" Content="login" Click="login_btn"/>
-        </StackPanel>
+                <StackPanel>
+                    <TextBlock x:Name="message" Width="150" Height="20" HorizontalAlignment="Center" Margin="0 5 1 10" Foreground="Red"/>
+                    <Border Height="22" Width="52" Background="#f08c6e"  HorizontalAlignment="Right" Margin="10 10 20 0">
+            <Button Height="20" Width="50" HorizontalAlignment="Center"  Content="login" Click="login_btn" />
+                </Border>
+                </StackPanel>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

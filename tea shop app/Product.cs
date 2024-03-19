@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace tea_shop_app
 {
-    class Product
+  public  class Product
     {
          private string _pname;
 
@@ -29,14 +29,23 @@ namespace tea_shop_app
             get { return _prodid; }
            
         }
-        
-        public Product() { }
+        private string _status;
 
-        public Product(string name, float price,int pid)
+        public string Status
+        {
+            get { return _status; }
+            set { _status = value; }
+        }
+        
+        public Product()
+        { }
+
+        public Product(string name, float price,int pid,string status)
         {
             this._pname = name;
             this._price = price;
             this._prodid = pid;
+            this._status = status;
         }
     }
 }

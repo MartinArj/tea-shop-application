@@ -1,19 +1,20 @@
-﻿<Page x:Class="tea_shop_app.view"
+﻿<Page x:Class="tea_shop_app.view_emp"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="400" d:DesignWidth="450"
-	Title="view">
+      d:DesignHeight="400" d:DesignWidth="650"
+	Title="view_emp"
+      Background="White">
 
-    <Grid Background="#e8d87d">
-        <StackPanel HorizontalAlignment="Center" >
-           
-                <TextBlock Text="products" Width="100" Height="30" FontSize="16" FontWeight="SemiBold" Foreground="Salmon"/>
-          
+    <Grid>
+        <StackPanel HorizontalAlignment="Center"  >
+
+            <TextBlock Text="employees" Width="100" Height="30" FontSize="16" FontWeight="SemiBold" Foreground="Salmon"/>
+
         </StackPanel>
-        <DataGrid Height="250" Width="400" AutoGenerateColumns="False" x:Name="product_tetail" BorderThickness="3" Background="#d8e8dc" >
+        <DataGrid Height="250" Width="550" AutoGenerateColumns="False" x:Name="employee_tetail" BorderThickness="3" Background="#d8e8dc" >
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter  Property="Background" Value="Turquoise" />
@@ -27,14 +28,13 @@
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="id" Width="40" Binding="{Binding  Prodid}"/>
-                <DataGridTextColumn Header=" name" Width="*" Binding="{Binding Pname}"/>
-                <DataGridTextColumn Header="price" Width="*" Binding="{Binding Price}" />
-                <DataGridTextColumn Header="status" Width="*" Binding="{Binding Status}"/>
-           
+                <DataGridTextColumn Header="Empid" Width="40" Binding="{Binding  Empid}"/>
+                <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Dob" Width="*" Binding="{Binding Dob}" />
+                <DataGridTextColumn Header="Phone" Width="*" Binding="{Binding Phone}"/>
+                <DataGridTextColumn Header="Type" Width="*" Binding="{Binding Type}"/>
+                <DataGridTextColumn Header="Email" Width="*" Binding="{Binding Email}"/>
             </DataGrid.Columns>
         </DataGrid>
-            
-        
     </Grid>
 </Page>

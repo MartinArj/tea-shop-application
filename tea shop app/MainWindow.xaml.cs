@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using System.Windows.Threading;
 namespace tea_shop_app
 {
     /// <summary>
@@ -20,25 +20,39 @@ namespace tea_shop_app
     /// </summary>
     public partial class MainWindow : Window
     {
+        employee_repository employee;
+
+        DispatcherTimer timer;
         Dictionary<string,string> log_dic_laber = new Dictionary<string, string>();
         Dictionary<string, string> log_dic_manager = new Dictionary<string, string>();
         public MainWindow()
         {
+            employee = new employee_repository();
             InitializeComponent();
-            log_dic_laber["martinaraj"] = "9003459797";
-            log_dic_manager["qwer"] = "12345";
-            id.Text = "martinaraj";
-            password.Text = "9003459797";
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(5);
+            timer.Tick += timer_Tick;
+        }
+
+        void timer_Tick(object sender, EventArgs e)
+        {
+            message.Text = null;
+            timer.Stop();
         }
         private bool jecklogin_laber(string id,string pass)
         {
             bool correct = false;
-            if (log_dic_laber.ContainsKey(id))
+            if (employee.laber.ContainsKey(id))
             {
-                if (log_dic_laber.ContainsValue(pass))
+                if ((employee.laber[id]==pass))
                 {
                     correct = true;
 
+                }
+                else
+                {
+                    message.Text = "incorect password";
+                    timer.Start();
                 }
              
 
@@ -50,12 +64,17 @@ namespace tea_shop_app
         private bool jecklogin_manager(string id, string pass)
         {
             bool correct = false;
-            if (log_dic_manager.ContainsKey(id))
+            if (employee.manager.ContainsKey(id))
             {
-                if (log_dic_manager.ContainsValue(pass))
+                if (employee.manager[id] == pass)
                 {
                     correct = true;
 
+                }
+                else
+                {
+                    message.Text = "incorect password";
+                    timer.Start();
                 }
                
 
@@ -69,24 +88,28 @@ namespace tea_shop_app
 
         private void login_btn(object sender, RoutedEventArgs e)
         {
-            string lid = id.Text;
-            string lpass = password.Text;
+            string log_id = id.Text;
+            string log_pass = password.Text;
            
-            if (jecklogin_laber(lid,lpass) ) //it is return password correct or not
+            if (jecklogin_laber(log_id,log_pass) ) //it is return password correct or not
             {
                // MessageBox.Show("welcome laber","INFORM", MessageBoxButton.OK, MessageBoxImage.Information);
                 LaberWindow laber = new LaberWindow();
                 laber.Show();
                 this.Close();
             }
-            if (jecklogin_manager(lid, lpass)) //it is return password correct or not
+            else if (jecklogin_manager(log_id, log_pass)) //it is return password correct or not
             {
 
                 ManagerWindow managerwindow = new ManagerWindow();
-
-
                 managerwindow.Show();
-                    this.Close();
+                this.Close();
+            }
+            else
+            {
+                message.Text = "incorrect id and pass word!";
+                timer.Start();
+            
             }
         }  
 
